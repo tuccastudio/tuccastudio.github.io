@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Comfortaa:wght@300&family=Kenia&family=La+Belle+Aurore&family=Playfair+Display&family=Reenie+Beanie&family=Rubik+80s+Fade&family=Unbounded&family=Zen+Dots&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
-body, html {
-    background-color: black;
-    font-family: comfortaa;
-    margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body {
+    /* background-image: linear-gradient(120deg, #433fbd, white);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+    height: 500vh;
+    width: 100%;
+    font-family: "Montserrat";
     scroll-behavior:smooth;
+    transition: ease 500ms;
 }
 
 li {
@@ -13,39 +19,35 @@ li {
 li:hover {
     rotate: 10deg;
 }
-.container {
-    margin: 5vh auto auto auto;
-	padding: 20px 50px;
-    border-radius: 40px 40px 40px 40px;
-    background-image: linear-gradient(120deg, #433fbd, white);
-    width: 80%;
-    height: 800vh;
-	clear: both;
-    display: block;
-    transition: 800ms ease;
-}
-h1 {
-    font-size: 20vh;
-}
+
 h4 {
     text-align: center;
     color: white;
+    font-size: 2vh;
+}
+.container {
+    width: 100%;
+    height: 80vh;
+    position: sticky;
 }
 .checkbox {
     opacity: 0%;
 }
 .burger {
+    color: rgb(42, 61, 185);
     position: fixed;
     height: 80px;
     width: 80px;
     top: 1.5%;
     left: 1%;
     transition: ease 500ms;
+    z-index: 10;
 }
 
 .burger:hover{
     height: 100px;
     width: 100px;
+    cursor: pointer;
 }
 .sidemenu {
     color: white;
@@ -54,11 +56,12 @@ h4 {
     left: 0%;
     transition: ease 500ms;
     display: block;
-    background-image: linear-gradient(rgb(53, 106, 190), white);
+    background-color: rgb(53, 106, 190);
     padding: 20px;
     list-style: none;
     font-size: 4vh;
     border-radius: 0px 20px 20px 0px;
+    z-index: 10;
 }
 
 .sidemenu a {
@@ -80,23 +83,24 @@ h4 {
     left: -50%;
 }
 
-.burger input:checked ~ .container {
-    opacity: 50%;
-}
+
 
 .title {
-    font-size: 12vh;
+    font-size: 8vw;
+    position: relative;
     text-align: center;
     color: white;
+    width: 100%;
     text-shadow: 0px 5px rgb(11, 41, 94);
-    font-family: Niconne;
+    font-family: Crimson pro;
+    margin-bottom: 0vh;
 }
 .heart {
     position: absolute;
-    width: 200px;
-    height: 200px;
-    left: 75%;
-    bottom: 65%;
+    width: 20vh;
+    height: 20vh;
+    left: 85%;
+    bottom: 80%;
     rotate: 45deg;
     transition: ease 200ms;
 }
@@ -105,17 +109,25 @@ h4 {
     width: 250px;
     height: 250px;
 }
+
+.form-horizontal {
+    margin: 2vh;
+    width: 100%;
+}
 .form-control {
-    width: 50vh;
+    width: 80%;
     background-color: black;
-    font-size: 4vh;
+    font-size: 5vh;
     color: white;
     margin-top: 10vh;
     border-radius: 50px;
+    padding-left: 0vh;
     border: none;
     height: 5vw;
     min-height:5vw;
-    padding-left: 2vh;
+    max-height: 10vw;
+    font-family: "Montserrat";
+    margin-bottom: 10vh;
 }
 
 .form-group-left {
@@ -124,17 +136,58 @@ h4 {
 .form-group-right {
     float: right;
 }
+.text-center {
+    text-align: center;
+    display: block;
+}
 
 @media screen and (max-width:800px) {
-    .form-group-left .form-group-right{
+    .form-control{
+        width: 90%;
+        height: 20vh;
+    }
+    .form-group-left {
+        float: left;
         width: 100%;
+    }
+    .form-group-right {
+        float: left;
+        width: 100%;
+        margin-bottom: 20vh;
+    }
+    .submit {
+        position: relative;
+    }
+    .text-center {
+        z-index: -1;
+        position: absolute;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 3vw;
+        display: block;
+        width: 100%;
+        top: 30%;
+    }
+    .heart {
+        width: 10vh;
+        height: 10vh;
+        bottom: 90%;
+    }
+    .heart:hover {
+        width: 12vh;
+        height: 12vh;
+    }
+    .burger {
+        width: 10vh;
+        height: 10vh;
     }
 }
 
 .break {
     background: white;
     height: 2vh;
-    width: 100%;
+    width: 80%;
     margin: auto;
     margin-top: 20vh;
 }
@@ -150,7 +203,7 @@ h4 {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    font-family: Comfortaa;
+    font-family: "Montserrat";
 }
 
 .submit:hover {
