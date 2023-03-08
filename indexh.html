@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="lovestyle.css">
+ <title>Archi's Love Calculator!</title>
+
+</head>
+<body>
+
+	<label class="burger"><input type="checkbox" class="checkbox" checked><img src="https://cdn-icons-png.flaticon.com/512/189/189671.png" class="burger">
+		<ul class="sidemenu">
+			<a href="#games"><li>Games</li></a>
+			<a href="#abtus"><li>About Us</li></a>
+			<a href=""><li>Next Projects</li></a>
+			<a href=""><li>Teams</li></a>
+		</ul>
+	</label>
+
+	<img src="https://cdn-icons-png.flaticon.com/512/2589/2589175.png" class="heart">
+    <div class="container">
+        <div class=" clearfix">
+            <div class="calc col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                    <h1 class="title" id="games">Archi's Love Generator!</h1>
+                    <h4>Is your current love really true? Find out by typing your name and your partner's name!</h4>
+                    <form role="form" class="form-horizontal">
+                            <div class="form-group-left">
+                                    <input type="text" class="form-control" name="names" placeholder="Name One" />
+                            </div>
+							<div class="form-group-center"></div>
+                            <div class="form-group-right">
+                                <input type="text" class="form-control" name="names" placeholder="Name Two" />
+                            </div>
+                            <h1 id="result" class="text-center"></h1>
+                            <div class="form-group">
+                                <button class="submit" type="submit" id="submit">Calculate</button>
+                            </div>
+                    </form>
+                    <p id="warning" class="text-danger"></p>
+		<div class="break" id="abtus"></div>
+		<div class="about-us">
+			<h1>About Us</h1>
+		</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<script>
+function love(array) {
+		var hold = [],
+				result,
+				newArray;
+		if (array.length > 2) {
+				newArray = array.map(function(item, index, array) {
+						return item + array[index + 1];
+				});
+				newArray.forEach(function(item) {
+						if (typeof item === "number" && !isNaN(item)) {
+								if (item < 10) {
+										hold.push(item);
+								} else if (item > 9) {
+										console.log('Splitting' + item + " into " + item.toString()[0] + " and " + item.toString()[1]);
+										hold.push(parseInt(item.toString()[0]));
+										hold.push(parseInt(item.toString()[1]));
+								}
+						} else {
+								console.log("failed number check: " + item);
+						}
+				});
+				love(hold);
+		} else {
+				document.getElementById('result').textContent = array[0] + "" + array[1] + "%";
+				result = array[0] + "" + array[1] + "%";
+				return result;
+		}
+}
+
+function calculate() {
+		var inputs = document.getElementsByName('names'),
+				loves = ["l", "o", "v", "e", "s"],
+				countArray = [],
+				count,
+				names,
+				jointNames;
+		document.getElementById('warning').textContent = "";
+		if (!inputs[0].value || !inputs[1].value) {
+				document.getElementById('warning').textContent = "You haven't input any names!";
+		} else {
+				names = "" + inputs[0].value + "" + inputs[1].value + "";
+				jointNames = names.toLowerCase();
+				countArray = loves.map(function(item) {
+						count = 0;
+						for (var i = 0; i < jointNames.length; i += 1) {
+								if (item === jointNames[i]) {
+										count += 1;
+								}
+						}
+						return count;
+				});
+				love(countArray);
+		}
+}
+
+function message() {
+    var count = calculate()
+    alert(count)
+}
+
+document.getElementById('submit').addEventListener('click', function(e) {
+		e.preventDefault();
+		calculate();
+
+}, false);
+</script>
+</body>
+
+</html>

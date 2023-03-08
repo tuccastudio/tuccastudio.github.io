@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Comfortaa:wght@300&family=Kenia&family=La+Belle+Aurore&family=Playfair+Display&family=Reenie+Beanie&family=Rubik+80s+Fade&family=Unbounded&family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+body, html {
+    background-color: black;
+    font-family: comfortaa;
+    margin: 0;
+    scroll-behavior:smooth;
+}
+
+li {
+    transition: ease 100ms;
+}
+li:hover {
+    rotate: 10deg;
+}
+.container {
+    margin: 5vh auto auto auto;
+	padding: 20px 50px;
+    border-radius: 40px 40px 40px 40px;
+    background-image: linear-gradient(120deg, #433fbd, white);
+    width: 80%;
+    height: 800vh;
+	clear: both;
+    display: block;
+    transition: 800ms ease;
+}
+h1 {
+    font-size: 20vh;
+}
+h4 {
+    text-align: center;
+    color: white;
+}
+.checkbox {
+    opacity: 0%;
+}
+.burger {
+    position: fixed;
+    height: 80px;
+    width: 80px;
+    top: 1.5%;
+    left: 1%;
+    transition: ease 500ms;
+}
+
+.burger:hover{
+    height: 100px;
+    width: 100px;
+}
+.sidemenu {
+    color: white;
+    position: fixed;
+    top: 15%;
+    left: 0%;
+    transition: ease 500ms;
+    display: block;
+    background-image: linear-gradient(rgb(53, 106, 190), white);
+    padding: 20px;
+    list-style: none;
+    font-size: 4vh;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.sidemenu a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    transition: ease 200ms;
+}
+
+.sidemenu a:hover{
+    font-size: 5vh;
+}
+
+.burger input:checked ~ .burger {
+    rotate: 90deg;
+}
+
+.burger input:checked ~ .sidemenu {
+    left: -50%;
+}
+
+.burger input:checked ~ .container {
+    opacity: 50%;
+}
+
+.title {
+    font-size: 12vh;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 5px rgb(11, 41, 94);
+    font-family: Niconne;
+}
+.heart {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 75%;
+    bottom: 65%;
+    rotate: 45deg;
+    transition: ease 200ms;
+}
+
+.heart:hover {
+    width: 250px;
+    height: 250px;
+}
+.form-control {
+    width: 50vh;
+    background-color: black;
+    font-size: 4vh;
+    color: white;
+    margin-top: 10vh;
+    border-radius: 50px;
+    border: none;
+    height: 5vw;
+    min-height:5vw;
+    padding-left: 2vh;
+}
+
+.form-group-left {
+    float: left;
+}
+.form-group-right {
+    float: right;
+}
+
+@media screen and (max-width:800px) {
+    .form-group-left .form-group-right{
+        width: 100%;
+    }
+}
+
+.break {
+    background: white;
+    height: 2vh;
+    width: 100%;
+    margin: auto;
+    margin-top: 20vh;
+}
+.submit {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: block;
+    border-radius: 50px;
+    margin-top: 5vw;
+    width: 50%;
+    height: 10vh;
+    font-size: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-family: Comfortaa;
+}
+
+.submit:hover {
+    background-color: grey;
+}
+
+.submit:active {
+    background-color: purple;
+}
+#result {
+	color: rgb(255, 255, 255);
+    font-size: 85px;
+	height: 150px;
+    text-align: center;
+}
+
+#warning {
+    color: red;
+    text-align: center;
+    font-size: 3vh;
+}
