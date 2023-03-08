@@ -142,6 +142,9 @@ h4 {
 }
 
 @media screen and (max-width:800px) {
+    .title {
+        font-size: 10vh;
+    }
     .form-control{
         width: 90%;
         height: 20vh;
@@ -153,32 +156,43 @@ h4 {
     .form-group-right {
         float: left;
         width: 100%;
-        margin-bottom: 20vh;
+        margin-bottom: 3vh;
     }
     .submit {
+        position: relative;
+        margin-bottom: 5vh;
+        
+    }
+    .break {
         position: relative;
     }
     .text-center {
         z-index: -1;
         position: absolute;
         text-align: center;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0%;
         font-size: 3vw;
         display: block;
         width: 100%;
-        top: 30%;
+        margin-top: 28%;
+    }
+    .burger input:checked ~ .sidemenu {
+        left: -70%;
     }
     .heart {
         width: 10vh;
         height: 10vh;
-        bottom: 90%;
+        bottom: 85%;
     }
     .heart:hover {
-        width: 12vh;
-        height: 12vh;
+        width: 10vh;
+        height: 10vh;
     }
     .burger {
+        width: 8vh;
+        height: 8vh;
+    }
+    .burger:hover {
         width: 10vh;
         height: 10vh;
     }
