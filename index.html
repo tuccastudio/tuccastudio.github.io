@@ -13,38 +13,49 @@
 		<ul class="sidemenu">
 			<a href="#games"><li>Games</li></a>
 			<a href="#abtus"><li>About Us</li></a>
-			<a href=""><li>Next Projects</li></a>
-			<a href=""><li>Teams</li></a>
+			<a href="#nexpro"><li>Next Projects</li></a>
+			<a href="#teams"><li>Teams</li></a>
 		</ul>
 	</label>
 
 	<img src="https://cdn-icons-png.flaticon.com/512/2589/2589175.png" class="heart">
     <div class="container">
         <div class=" clearfix">
-            <div class="calc col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                    <h1 class="title" id="games">Archi's Love Generator!</h1>
+            <div class="calc col-sm-10 col-sm-offset-2 col-md-4 col-md-offset-4">
+                    <h1 class="title" id="games">Archi's Love Calculator!</h1>
                     <h4>Is your current love really true? Find out by typing your name and your partner's name!</h4>
                     <form role="form" class="form-horizontal">
                             <div class="form-group-left">
                                     <input type="text" class="form-control" name="names" placeholder="Name One" />
                             </div>
-							<div class="form-group-center"></div>
                             <div class="form-group-right">
                                 <input type="text" class="form-control" name="names" placeholder="Name Two" />
                             </div>
-                            <h1 id="result" class="text-center"></h1>
+							<div class="form-group-center"></div>
+							<h1 id="result" class="text-center"></h1>
                             <div class="form-group">
                                 <button class="submit" type="submit" id="submit">Calculate</button>
                             </div>
                     </form>
                     <p id="warning" class="text-danger"></p>
-		<div class="break" id="abtus"></div>
-		<div class="about-us">
-			<h1>About Us</h1>
-		</div>
             </div>
         </div>
     </div>
+	<div class="break" id="abtus"></div>
+	<div class="about-us">
+		<h1>About Us</h1>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
 </header>
 
 <script>
@@ -79,7 +90,7 @@ function love(array) {
 
 function calculate() {
 		var inputs = document.getElementsByName('names'),
-				loves = ["l", "o", "v", "e", "s"],
+				loves = ["a", "r", "c", "h", "i"],
 				countArray = [],
 				count,
 				names,
@@ -113,6 +124,27 @@ document.getElementById('submit').addEventListener('click', function(e) {
 		calculate();
 
 }, false);
+
+var body = document.getElementsByTagName('body')[0];
+        body.style.backgroundColor = 'green';
+
+        // trigger this function every time the user scrolls
+        window.onscroll = function (event) {
+            var scroll = window.pageYOffset;
+            if (scroll < 720) {
+                body.style.backgroundColor = 'rgb(54, 136, 187)';
+            } else if (scroll >= 720 && scroll < 1440) {
+                body.style.backgroundColor = 'rgb(42, 61, 185)';
+            } else if (scroll >= 1440 && scroll < 1800) {
+                body.style.backgroundColor = 'blue';
+            } else if (scroll >= 1200 && scroll < 1800) {
+                body.style.backgroundColor = 'orange';
+            } else if (scroll >= 1800 && scroll < 3000) {
+                body.style.backgroundColor = 'red';
+            } else {
+                body.style.backgroundColor = 'purple';
+            }
+        }
 </script>
 </body>
 
